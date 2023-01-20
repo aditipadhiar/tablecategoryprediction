@@ -31,8 +31,8 @@ def predict():
         #return prediction
         return render_template('index.html', prediction_text="The Category is: {}".format(prediction))
         
-    else:
-        return render_template('index.html')
+    #else:
+        #return render_template('index.html')
 
 if __name__=="__main__":
     app.run(debug=True)
