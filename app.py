@@ -28,8 +28,8 @@ def predict():
         data = [Tablename]
         vect = cv.transform(data).toarray()
         prediction=model.predict(vect)
-        #return prediction
-        return render_template('index.html', prediction_text="The Category is: {}".format(prediction))
+        #return str(prediction)
+        return str("The Category is: {}".format((prediction)))
         
     #else:
         #return render_template('index.html')
