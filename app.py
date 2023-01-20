@@ -29,14 +29,14 @@ def predict():
         data = [Tablename]
         vect = cv.transform(data).toarray()
         prediction=model.predict(vect)
-        #return str(prediction)
-        return render_template('index.html', prediction_text="The Category is: {}".format((prediction)))
+        return str(prediction)
+        #return render_template('index.html', prediction_text="The Category is: {}".format((prediction)))
         #return str(prediction_text="The Category is: {}".format((prediction)))
 
     #else:
         #return render_template('index.html')
 
 if __name__=="__main__":
-    #response_API = requests.get('https://web-production-20ea.up.railway.app')
-    #print(response_API.text)
+    response_API = requests.get('https://web-production-20ea.up.railway.app')
+    print(response_API.text)
     app.run(debug=True)
