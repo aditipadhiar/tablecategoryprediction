@@ -37,6 +37,6 @@ def predict():
         #return render_template('index.html')
 
 if __name__=="__main__":
-    response_API = requests.get('https://web-production-20ea.up.railway.app')
-    print(response_API.text)
+    #response_API = requests.get('https://web-production-20ea.up.railway.app')
+    #print(response_API.text)
     app.run(debug=True)
