@@ -18,8 +18,7 @@ model = pickle.load(open('trained_model.pkl', 'rb'))
 cv = pickle.load(open('transform.pkl', 'rb'))
 @app.route('/', methods=['GET'])
 def Home():
-    #return render_template('/index.html')
-    return "Hello World!"
+    return render_template('Templates/index.html')
 
 standard_to = StandardScaler()
 @app.route("/predict", methods=['POST'])
@@ -30,10 +29,10 @@ def predict():
         vect = cv.transform(data).toarray()
         prediction=model.predict(vect)
         #return str(prediction)
-        return str("The Category is: {}".format((prediction)))
+        return render_template('Templates/index.html', prediction_text="The Category is: {}".format((prediction)))
         
     #else:
-        #return render_template('Templates/index.html')
+        #return render_template('index.html')
 
 if __name__=="__main__":
     app.run(debug=True)
