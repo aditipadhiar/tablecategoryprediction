@@ -28,7 +28,7 @@ def predict():
         Tablename = str(request.form['Tablename'])  
         data = [Tablename]
         vect = cv.transform(data).toarray()
-        prediction=model.predict(vect)
+        prediction=model.predict(vect) [0]
         return str(prediction)
         #return render_template('index.html', prediction_text="The Category is: {}".format((prediction)))
         #return str(prediction_text="The Category is: {}".format((prediction)))
