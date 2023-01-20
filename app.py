@@ -18,7 +18,8 @@ model = pickle.load(open('trained_model.pkl', 'rb'))
 cv = pickle.load(open('transform.pkl', 'rb'))
 @app.route('/', methods=['GET'])
 def Home():
-    return render_template('/index.html')
+    #return render_template('/index.html')
+    return "Hello World!"
 
 standard_to = StandardScaler()
 @app.route("/predict", methods=['POST'])
